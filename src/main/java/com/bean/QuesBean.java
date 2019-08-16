@@ -13,7 +13,7 @@ public class QuesBean
 {
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private int Ques_id; 
+		private int ques_id; 
 		private String question;
 
 		private String quesName;
@@ -43,11 +43,11 @@ public class QuesBean
 		
 
 		public int getQues_id() {
-			return Ques_id;
+			return ques_id;
 		}
 
 		public void setQues_id(int ques_id) {
-			Ques_id = ques_id;
+			ques_id = ques_id;
 		}
 
 		public String getOptA() {

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java"   contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
     <%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
     
@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<f:form action="" method="" modelAttribute="bean">
+${message}
+<%-- <f:form action="" method="" modelAttribute="bean">
 <table>
 <tr><td>User:</td></tr>
 <tr><td>Exam: ${bean.eBean.examTitle} </td> </tr>
@@ -19,5 +20,5 @@
 
 </table>
 
-</f:form></body>
+</f:form> --%></body>
 </html>

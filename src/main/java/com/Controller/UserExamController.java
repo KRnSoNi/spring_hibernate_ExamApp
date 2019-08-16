@@ -25,16 +25,22 @@ public class UserExamController {
 	@RequestMapping(value = "/examdata", method = RequestMethod.POST)
 	public String examData(@ModelAttribute ListUserExamBean exams, Model model) {
 		List<User_Exam_Bean> beans = exams.getUserexam();
+		int marks=0;
+		int questionCount=0;
+		String message=null;
 
 		for (User_Exam_Bean bean : beans) 
 		{
 			
-			int marks=0;
 			String answer = bean.getqBean().getAnswer();
 			int ExamID= bean.geteBean().getExam_id();
 			int QuesID= bean.getqBean().getQues_id();
+			questionCount++;
+			
+			
 			if(bean.getAnsOfUSer().equals(answer)) {
-				bean.setStatus(true);		
+				bean.setStatus(true);	
+				marks++;
 			}
 			else {
 				bean.setStatus(false);
@@ -43,6 +49,13 @@ public class UserExamController {
 			model.addAttribute("data", bean);
 		
 		}
+		
+		if(marks>=questionCount/2) {
+			message="Congo!You have passed this exam";
+		}else {
+		    message="Sorry!You have not passed this exam";
+		}
+		model.addAttribute("message",message);
 		return "result";
 		
 	}

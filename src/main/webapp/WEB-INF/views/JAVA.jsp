@@ -1,7 +1,7 @@
 <%@ page language="java" isELIgnored="false"
 	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="f" uri="http://www.springframework.org/tags/form"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 
 
 <!DOCTYPE html>
@@ -40,21 +40,21 @@
 					<td colspan="4">Ques: ${i.index+1} : ${ex.qBean.question}</td>
 				
 
+            
+   
+				<td><input type="hidden" name="userexam[${i.index}].qBean.ques_id" value="${ex.qBean.ques_id}"> </td>                                        
+				<td><input type="hidden" name="userexam[${i.index}].eBean.exam_id" value="${ex.eBean.exam_id}">	</td>                                     
+				<td><input type="hidden" name="userexam[${i.index}].uBean.user_id" value="${ex.uBean.user_id}"> </td>                                        
+				<td><input type="hidden" name="userexam[${i.index}].qBean.answer"  value="${ex.qBean.answer}">  </td>
 
-
-				<input type="hidden" name="userexam[${i.index}].qBean.Ques_id" value="${ex.qBean.Ques_id}">                                         
-				<input type="hidden" name="userexam[${i.index}].eBean.exam_id" value="${ex.eBean.exam_id}">	                                     
-				<input type="hidden" name="userexam[${i.index}].uBean.user_id" value="${ex.uBean.exam_id}">                                         
-				<input type="hidden" name="userexam[${i.index}].qBean.answer"  value="${ex.qBean.answer}">
-
-				<td>${ex.qBean.optA}<input type="radio"
-					name="userexam[${i.index}].ansOfUSer" value="${ex.qBean.optA}" /></td>
+				<td> ${ex.qBean.optA}<input type="radio"
+					name="userexam[${i.index}].ansOfUSer" value="A" /></td>
 				<td>${ex.qBean.optB}<input type="radio"
-					name="userexam[${i.index}].ansOfUSer" value="${ex.qBean.optB}" /></td>
+					name="userexam[${i.index}].ansOfUSer" value="B" /></td>
 				<td>${ex.qBean.optC}<input type="radio"
-					name="userexam[${i.index}].ansOfUSer" value="${ex.qBean.optC}" /></td>
+					name="userexam[${i.index}].ansOfUSer" value="C" /></td>
 				<td>${ex.qBean.optD}<input type="radio"
-					name="userexam[${i.index}].ansOfUSer" value="${ex.qBean.optD}" /></td>
+					name="userexam[${i.index}].ansOfUSer" value="D" /></td>
 
 				</td>
 
